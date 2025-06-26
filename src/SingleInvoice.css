@@ -1,0 +1,47 @@
+.single{
+    background-color: #c4e4ed;
+    padding:0 20px;
+    height:100%;
+}
+.title p{
+    text-align:left;
+}
+.title{
+    padding:20px 0;
+    background-color: #c4e4ed;
+}
+.heading h3{
+    text-align: center;
+    font-size:25px;
+    color: #958FE9;
+}
+.bill p{
+    text-align: left;
+}
+.supply p{
+    text-align: right;
+}
+.heading1 th{
+    background-color:rgb(149, 143, 233) !important ;
+}
+.description{
+    text-align: left;
+}
+.description h6{
+    font-size:15px;
+    color: #6c6767d7;
+}
+.description p{
+    font-size:15px;
+    color: #6c6767d7;
+    text-align: left;
+}
+.total{
+    background-color:#958FE9 ;
+}
+.total1 p{
+    text-align: left;
+}
+.total2 p{
+    text-align: right;
+}

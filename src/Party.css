@@ -1,0 +1,35 @@
+.party{
+    background-color: #c4e4ed ;
+    height:100%;
+}
+.heading{
+    padding:20px 0;
+}
+.heading1{
+    padding-bottom:50px;
+}
+.heading2 p{
+    font-size:20px;
+}
+.heading2{
+    border-bottom: solid 1px #c0c3c3;
+}
+.heading2 p:hover{
+    color:#0a6c91;
+}
+.heading3{
+    padding-top:30px;
+}
+.form{
+    margin-bottom:30px;
+}
+.heading4{
+    border-right:solid 1px #c0c3c3;
+}
+.heading5{
+    text-align: right;
+    padding-top:150px;
+}
+.but{
+    margin-left: 10px;
+}

@@ -1,0 +1,23 @@
+.heading{
+    background-color:#c4e4ed ;
+    height:100%;
+}
+.add{
+    font-size:20px;
+    border-radius:100%;
+    border:solid 1px black;
+    padding:30px;
+}
+.heading1 p{
+    text-align: left;
+    font-size:18px;
+    font-weight:450;
+}
+.but{
+    text-align: right;
+}
+.circle{
+    border-radius:100px;
+    background-color: pink;
+    color: blue;
+}
