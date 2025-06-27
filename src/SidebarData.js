@@ -7,11 +7,7 @@ import GroupOutlinedIcon from '@mui/icons-material/GroupOutlined';
 import AddCircleOutlinedIcon from '@mui/icons-material/AddCircleOutlined';
 
 export const SidebarData = [
-    {
-        title:"Anuu",
-        icon:<HomeIcon/>,
-        link:"/anuu",
-    },
+    
      {
         title:"Document",
         icon:<HomeIcon/>,
@@ -46,6 +42,11 @@ export const SidebarData = [
         title:"Profile",
         icon:<AddCircleOutlinedIcon/>,
         link:"/profile",
+    },
+    {
+        title:"viewprofile",
+        icon:<AddCircleOutlinedIcon/>,
+        link:"/viewprofile",
     },
     {
         title:"Service",

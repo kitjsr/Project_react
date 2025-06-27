@@ -9,6 +9,7 @@ import InputGroup from "react-bootstrap/InputGroup";
 import * as formik from "formik";
 import * as yup from "yup";
 
+
 function MydModalWithGrid(props) {
   return (
     <Modal {...props} aria-labelledby="contained-modal-title-vcenter">
@@ -55,24 +56,31 @@ export const Additem = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const [isOn, setIsOn] = useState(false);
-
+  const [category,setCategory]=useState("Product");
   const handleToggle = () => {
     setIsOn(!isOn);
+
   };
   const { Formik } = formik;
-  
-    const schema = yup.object().shape({
-      itemName: yup.string().required(),
-      itemHsn: yup.number().required(),
-      itemCode: yup.number().required(),
-      sale: yup.number().required(),
-      disale: yup.number().required(),
-      wholesale: yup.number().required(),
-      minqty: yup.number().required(),
-      purchase: yup.number().required(),
-    });
+
+  const schema = yup.object().shape({
+    itemName: yup.string().required(),
+    itemHsn: yup.number().required(),
+    itemCode: yup.number().required(),
+    sale: yup.number().required(),
+    disale: yup.number().required(),
+    wholesale: yup.number().required(),
+    minqty: yup.number().required(),
+    purchase: yup.number().required(),
+  });
   return (
+  
     <Container className="head">
+      <Row>
+        <Col>
+          {isOn==false ? <p>Product</p>:<p>Service</p>}
+        </Col>
+      </Row>
       <Row className="head1">
         <Col md={3}>
           <h3>Add Item</h3>
@@ -94,62 +102,53 @@ export const Additem = () => {
         </Col>
       </Row>
       <Formik
-            validationSchema={schema}
-            onSubmit={console.log}
-            initialValues={{
-              itemName : "",
-              itemHsn : "",
-              itemCode : "",
-              sale : "",
-              disale : "",
-              wholesale : "",
-              minqty : "",
-              purchase : "",
-            }}
-          >
-            {({ handleSubmit, handleChange, values, touched, errors }) => (
+        validationSchema={schema}
+        onSubmit={console.log}
+        initialValues={{
+          itemName: "",
+          itemHsn: "",
+          itemCode: "",
+          sale: "",
+          disale: "",
+          wholesale: "",
+          minqty: "",
+          purchase: "",
+        }}
+      >
+        {({ handleSubmit, handleChange, values, touched, errors }) => (
           <Form noValidate onSubmit={handleSubmit}>
             <Row className="head2">
               <Col md={3}>
-                <Form.Group
-                  className="mb-3"
-                  controlId="validationFormik04"
-                >
+                <Form.Group className="mb-3" controlId="validationFormik04">
                   <Form.Control
                     type="text"
                     placeholder="Item name"
-                        name="itemName"
-                        value={values.itemName}
-                        onChange={handleChange}
-                        isValid={touched.itemName && !errors.itemName}
-
-                        isInvalid={!!errors.itemName}
+                    name="itemName"
+                    value={values.itemName}
+                    onChange={handleChange}
+                    isValid={touched.itemName && !errors.itemName}
+                    isInvalid={!!errors.itemName}
                   />
                   <Form.Control.Feedback type="invalid">
-                                          {errors.itemName}
-                                        </Form.Control.Feedback>
+                    {errors.itemName}
+                  </Form.Control.Feedback>
                 </Form.Group>
               </Col>
               <Col md={3}>
-                <Form.Group
-                  className="mb-3"
-                  controlId="validationFormik04"
-                >
+                <Form.Group className="mb-3" controlId="validationFormik04">
                   <Form.Control
                     type="number"
                     placeholder="Item HSN"
                     className="from"
-                    
-                        value={values.itemHsn}
-                        name="itemHsn"
-                        onChange={handleChange}
-                        isValid={touched.itemHsn && !errors.itemHsn}
-
-                        isInvalid={!!errors.itemHsn}
+                    value={values.itemHsn}
+                    name="itemHsn"
+                    onChange={handleChange}
+                    isValid={touched.itemHsn && !errors.itemHsn}
+                    isInvalid={!!errors.itemHsn}
                   />
                   <Form.Control.Feedback type="invalid">
-                                          {errors.itemHsn}
-                                        </Form.Control.Feedback>
+                    {errors.itemHsn}
+                  </Form.Control.Feedback>
                 </Form.Group>
               </Col>
               <Col md={2} className="from1">
@@ -223,24 +222,20 @@ export const Additem = () => {
                 </>
               </Col>
               <Col md={3}>
-                <Form.Group
-                  className="mb-3"
-                  controlId="validationFormik04"
-                >
+                <Form.Group className="mb-3" controlId="validationFormik04">
                   <Form.Control
                     type="number"
                     placeholder="Item Code"
                     className="from"
-                        value={values.itemCode}
-                        name="itemCode"
-                        onChange={handleChange}
-                        isValid={touched.itemCode && !errors.itemCode}
-
-                        isInvalid={!!errors.itemCode}
+                    value={values.itemCode}
+                    name="itemCode"
+                    onChange={handleChange}
+                    isValid={touched.itemCode && !errors.itemCode}
+                    isInvalid={!!errors.itemCode}
                   />
                   <Form.Control.Feedback type="invalid">
-                                          {errors.itemCode}
-                                        </Form.Control.Feedback>
+                    {errors.itemCode}
+                  </Form.Control.Feedback>
                 </Form.Group>
               </Col>
             </Row>
@@ -265,21 +260,22 @@ export const Additem = () => {
                     <Accordion.Body>
                       <Row>
                         <Col md={6}>
-                          <InputGroup className="mb-3" 
-                  controlId="validationFormik04">
+                          <InputGroup
+                            className="mb-3"
+                            controlId="validationFormik04"
+                          >
                             <Form.Control
                               aria-label="Text input with dropdown button"
                               placeholder="sale price"
-                        value={values.sale}
-                        name="sale"
-                        onChange={handleChange}
-                        isValid={touched.sale && !errors.sale}
-
-                        isInvalid={!!errors.sale}
-                  />
-                  <Form.Control.Feedback type="invalid">
-                                          {errors.sale}
-                                        </Form.Control.Feedback>
+                              value={values.sale}
+                              name="sale"
+                              onChange={handleChange}
+                              isValid={touched.sale && !errors.sale}
+                              isInvalid={!!errors.sale}
+                            />
+                            <Form.Control.Feedback type="invalid">
+                              {errors.sale}
+                            </Form.Control.Feedback>
                             <Form.Select aria-label="Default select example">
                               <option value="1">With tax</option>
                               <option value="2">Without tax</option>
@@ -287,21 +283,22 @@ export const Additem = () => {
                           </InputGroup>
                         </Col>
                         <Col md={6}>
-                          <InputGroup className="mb-3" 
-                  controlId="validationFormik04">
+                          <InputGroup
+                            className="mb-3"
+                            controlId="validationFormik04"
+                          >
                             <Form.Control
                               aria-label="Text input with dropdown button"
                               placeholder="Disc on sale price"
-                        value={values.disale}
-                        name="disale"
-                        onChange={handleChange}
-                        isValid={touched.disale && !errors.disale}
-
-                        isInvalid={!!errors.disale}
-                  />
-                  <Form.Control.Feedback type="invalid">
-                                          {errors.disale}
-                                        </Form.Control.Feedback>
+                              value={values.disale}
+                              name="disale"
+                              onChange={handleChange}
+                              isValid={touched.disale && !errors.disale}
+                              isInvalid={!!errors.disale}
+                            />
+                            <Form.Control.Feedback type="invalid">
+                              {errors.disale}
+                            </Form.Control.Feedback>
                             <Form.Select aria-label="Default select example">
                               <option value="1">Percentage</option>
                               <option value="2">Amount</option>
@@ -320,21 +317,22 @@ export const Additem = () => {
                     <Accordion.Body>
                       <Row>
                         <Col md={6}>
-                          <InputGroup className="mb-3" 
-                  controlId="validationFormik04">
+                          <InputGroup
+                            className="mb-3"
+                            controlId="validationFormik04"
+                          >
                             <Form.Control
                               aria-label="Text input with dropdown button"
                               placeholder="Wholesale price"
-                        value={values.wholesale}
-                        name="wholesale"
-                        onChange={handleChange}
-                        isValid={touched.wholesale && !errors.wholesale}
-
-                        isInvalid={!!errors.wholesale}
-                  />
-                  <Form.Control.Feedback type="invalid">
-                                          {errors.wholesale}
-                                        </Form.Control.Feedback>
+                              value={values.wholesale}
+                              name="wholesale"
+                              onChange={handleChange}
+                              isValid={touched.wholesale && !errors.wholesale}
+                              isInvalid={!!errors.wholesale}
+                            />
+                            <Form.Control.Feedback type="invalid">
+                              {errors.wholesale}
+                            </Form.Control.Feedback>
                             <Form.Select aria-label="Default select example">
                               <option value="1">With tax</option>
                               <option value="2">Without tax</option>
@@ -361,21 +359,22 @@ export const Additem = () => {
                     <Accordion.Body>
                       <Row>
                         <Col md={6}>
-                          <InputGroup className="mb-3" 
-                  controlId="validationFormik04">
+                          <InputGroup
+                            className="mb-3"
+                            controlId="validationFormik04"
+                          >
                             <Form.Control
                               aria-label="Text input with dropdown button"
                               placeholder="Purchase price"
-                        value={values.purchase}
-                        name="purchase"
-                        onChange={handleChange}
-                        isValid={touched.purchase && !errors.purchase}
-
-                        isInvalid={!!errors.purchase}
-                  />
-                  <Form.Control.Feedback type="invalid">
-                                          {errors.purchase}
-                                        </Form.Control.Feedback>
+                              value={values.purchase}
+                              name="purchase"
+                              onChange={handleChange}
+                              isValid={touched.purchase && !errors.purchase}
+                              isInvalid={!!errors.purchase}
+                            />
+                            <Form.Control.Feedback type="invalid">
+                              {errors.purchase}
+                            </Form.Control.Feedback>
                             <Form.Select aria-label="Default select example">
                               <option value="1">With tax</option>
                               <option value="2">Without tax</option>
@@ -394,9 +393,7 @@ export const Additem = () => {
                     <Accordion.Body>
                       <Row>
                         <Col md={6}>
-                          <Form.Select
-                            aria-label="Default select example"
-                          >
+                          <Form.Select aria-label="Default select example">
                             <option>Tax rate</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
@@ -415,8 +412,8 @@ export const Additem = () => {
               </Col>
             </Row>
           </Form>
-            )}
-          </Formik>
+        )}
+      </Formik>
     </Container>
   );
 };

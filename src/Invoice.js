@@ -187,11 +187,8 @@ export const Invoice = () => {
                   <Col>
                     <p>
                       <ViewInArOutlinedIcon />
-                      <a
-                        href="/additem"
-                      >
-                        Add Sample item
-                      </a>
+                      <a href="">Add Sample item</a>
+                        
                     </p>
                   </Col>
                 </Row>

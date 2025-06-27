@@ -56,7 +56,6 @@ function App() {
               <Route path="/service" element={<Service/>} />
               <Route path="/viewprofile" element={<ViewProfile/>} />
               <Route path="/singleInvoice" element={<SingleInvoice/>} />
-              <Route path="/anuu" element={<Anuu/>} />
               <Route path="/document" element={<MyDocument/>} />
               <Route path="/*" element={<Home />} />
             </Routes>
