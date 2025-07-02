@@ -21,7 +21,6 @@ import Profile from "./Profile";
 import ViewProfile from "./ViewProfile";
 import Service from "./Service";
 import SingleInvoice from "./SingleInvoice";
-import { Anuu } from "./Anuu";
 import MyDocument from "./MyDocument";
 
 function App() {

@@ -78,7 +78,6 @@ export const Invoice = () => {
                         value={values.companyName}
                         onChange={handleChange}
                         isValid={touched.companyName && !errors.companyName}
-
                         isInvalid={!!errors.companyName}
                       />
 
@@ -157,7 +156,6 @@ export const Invoice = () => {
                         value={values.customerName}
                         onChange={handleChange}
                         isValid={touched.customerName && !errors.customerName}
-
                         isInvalid={!!errors.customerName}
                       />
                       <Form.Control.Feedback type="invalid">
@@ -188,7 +186,6 @@ export const Invoice = () => {
                     <p>
                       <ViewInArOutlinedIcon />
                       <a href="">Add Sample item</a>
-                        
                     </p>
                   </Col>
                 </Row>
@@ -211,7 +208,6 @@ export const Invoice = () => {
                         value={values.invoiceAmount}
                         onChange={handleChange}
                         isValid={touched.invoiceAmount && !errors.invoiceAmount}
-
                         isInvalid={!!errors.invoiceAmount}
                       />
                       <Form.Control.Feedback type="invalid">
@@ -229,7 +225,6 @@ export const Invoice = () => {
                         value={values.received}
                         onChange={handleChange}
                         isValid={touched.received && !errors.received}
-
                         isInvalid={!!errors.received}
                       />
 

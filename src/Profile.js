@@ -3,7 +3,7 @@ import { Col, Container, Form, Row } from "react-bootstrap";
 import "./Profile.css";
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 import Button from "react-bootstrap/Button";
-import { InputMask } from 'primereact/inputmask';
+import { InputMask } from "primereact/inputmask";
 
 import * as formik from "formik";
 import * as yup from "yup";
@@ -137,7 +137,8 @@ export const Profile = () => {
                 <Row>
                   <Col md={4}>
                     <Form.Group className="mb-3" controlId="validationFormik04">
-                      <Form.Label>Phone number</Form.Label><br/>
+                      <Form.Label>Phone number</Form.Label>
+                      <br />
                       {/* <Form.Control type="digit" placeholder="Enter Phone Number" 
                                                 name="mobile"
                                                 value={values.mobile}
@@ -150,7 +151,11 @@ export const Profile = () => {
                                               <Form.Control.Feedback type="invalid">
                                                 {errors.mobile}
                                               </Form.Control.Feedback> */}
-                                              <InputMask  id="phone" mask="(999) 999-9999" placeholder="(999) 999-9999"></InputMask>
+                      <InputMask
+                        id="phone"
+                        mask="(999) 999-9999"
+                        placeholder="(999) 999-9999"
+                      ></InputMask>
                     </Form.Group>
                   </Col>
                   <Col md={4}>

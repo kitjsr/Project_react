@@ -7,16 +7,20 @@ import GroupOutlinedIcon from '@mui/icons-material/GroupOutlined';
 import AddCircleOutlinedIcon from '@mui/icons-material/AddCircleOutlined';
 
 export const SidebarData = [
-    
-     {
-        title:"Document",
-        icon:<HomeIcon/>,
-        link:"/document",
+    {
+        title:"Home",
+        icon:<AddCircleOutlinedIcon/>,
+        link:"/home",
     },
     {
-        title:"Item",
-        icon:<LocalMallOutlinedIcon/>,
-        link:"/item",
+        title:"Profile",
+        icon:<AddCircleOutlinedIcon/>,
+        link:"/profile",
+    },
+    {
+        title:"Register",
+        icon:<PersonOutlineOutlinedIcon/>,
+        link:"/register",
     },
     {
         title:"Additem",
@@ -29,29 +33,14 @@ export const SidebarData = [
         link:"/invoice",
     },
     {
-        title:"Register",
-        icon:<PersonOutlineOutlinedIcon/>,
-        link:"/register",
-    },
-    {
         title:"Party",
         icon:<GroupOutlinedIcon/>,
         link:"/party",
     },
     {
-        title:"Profile",
-        icon:<AddCircleOutlinedIcon/>,
-        link:"/profile",
-    },
-    {
         title:"viewprofile",
         icon:<AddCircleOutlinedIcon/>,
         link:"/viewprofile",
-    },
-    {
-        title:"Service",
-        icon:<AddCircleOutlinedIcon/>,
-        link:"/service",
     },
     {
         title:"SingleInvoice",
